@@ -1,0 +1,681 @@
+{
+    "a_galaxy_workflow": "true", 
+    "annotation": "RNA Probing analysis workflow for single\n-end data. RNA Probing suite must be installed in the Galaxy instance you are using in order to run this workflow (https://testtoolshed.g2.bx.psu.edu/view/nikos/rna_probing).", 
+    "format-version": "0.1", 
+    "name": "HRF-Seq data analysis (Single-end)", 
+    "steps": {
+        "0": {
+            "annotation": "Fastqsanger\nUse FastQ Groomer to convert the quality scores to 'Sanger'", 
+            "id": 0, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "Fastqsanger\nUse FastQ Groomer to convert the quality scores to 'Sanger'", 
+                    "name": "Reads (Treated)"
+                }
+            ], 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 277.3333411216736, 
+                "top": 318.6875157356262
+            }, 
+            "tool_errors": null, 
+            "tool_id": null, 
+            "tool_state": "{\"name\": \"Reads (Treated)\"}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "user_outputs": []
+        }, 
+        "1": {
+            "annotation": "Fastqsanger\nUse FastQ Groomer to convert the quality scores to 'Sanger'", 
+            "id": 1, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "Fastqsanger\nUse FastQ Groomer to convert the quality scores to 'Sanger'", 
+                    "name": "Reads (Control)"
+                }
+            ], 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 268.87847661972046, 
+                "top": 785.2326512336731
+            }, 
+            "tool_errors": null, 
+            "tool_id": null, 
+            "tool_state": "{\"name\": \"Reads (Control)\"}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "user_outputs": []
+        }, 
+        "2": {
+            "annotation": "FASTA format", 
+            "id": 2, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "FASTA format", 
+                    "name": "Reference sequence"
+                }
+            ], 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 874.2257361412048, 
+                "top": 603.6007542610168
+            }, 
+            "tool_errors": null, 
+            "tool_id": null, 
+            "tool_state": "{\"name\": \"Reference sequence\"}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "user_outputs": []
+        }, 
+        "3": {
+            "annotation": "", 
+            "id": 3, 
+            "input_connections": {
+                "input": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Cutadapt", 
+            "outputs": [
+                {
+                    "name": "report", 
+                    "type": "txt"
+                }, 
+                {
+                    "name": "output", 
+                    "type": "input"
+                }, 
+                {
+                    "name": "rest_output", 
+                    "type": "input"
+                }, 
+                {
+                    "name": "wild_output", 
+                    "type": "txt"
+                }, 
+                {
+                    "name": "too_short_output", 
+                    "type": "input"
+                }, 
+                {
+                    "name": "untrimmed_output", 
+                    "type": "input"
+                }
+            ], 
+            "position": {
+                "left": 573.4270911216736, 
+                "top": 264.7812657356262
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionoutput": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "output"
+                }, 
+                "HideDatasetActionreport": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "report"
+                }, 
+                "HideDatasetActionrest_output": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "rest_output"
+                }, 
+                "HideDatasetActiontoo_short_output": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "too_short_output"
+                }, 
+                "HideDatasetActionuntrimmed_output": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "untrimmed_output"
+                }, 
+                "HideDatasetActionwild_output": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "wild_output"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/1.1.a", 
+            "tool_state": "{\"count\": \"\\\"1\\\"\", \"error_rate\": \"\\\"0.1\\\"\", \"match_read_wildcards\": \"\\\"False\\\"\", \"__page__\": 0, \"output_params\": \"{\\\"output_type\\\": \\\"default\\\", \\\"__current_case__\\\": 0}\", \"__rerun_remap_job_id__\": null, \"overlap\": \"\\\"3\\\"\", \"front_adapters\": \"[]\", \"no_match_adapters_wildcards\": \"\\\"False\\\"\", \"input\": \"null\", \"anywhere_adapters\": \"[]\", \"adapters\": \"[{\\\"__index__\\\": 0, \\\"adapter_source\\\": {\\\"adapter\\\": \\\"AGATCGGAAGAGCACACGTCT\\\", \\\"adapter_source_list\\\": \\\"user\\\", \\\"__current_case__\\\": 0}}]\", \"read_modification_params\": \"{\\\"quality_cutoff\\\": \\\"17\\\", \\\"suffix\\\": \\\"\\\", \\\"read_modification\\\": \\\"modify\\\", \\\"length_tag\\\": \\\"\\\", \\\"prefix\\\": \\\"\\\", \\\"__current_case__\\\": 1, \\\"zero_cap\\\": \\\"False\\\"}\", \"output_filtering_options\": \"{\\\"output_filtering\\\": \\\"default\\\", \\\"__current_case__\\\": 0}\"}", 
+            "tool_version": "1.1.a", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "4": {
+            "annotation": "", 
+            "id": 4, 
+            "input_connections": {
+                "input": {
+                    "id": 1, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Cutadapt", 
+            "outputs": [
+                {
+                    "name": "report", 
+                    "type": "txt"
+                }, 
+                {
+                    "name": "output", 
+                    "type": "input"
+                }, 
+                {
+                    "name": "rest_output", 
+                    "type": "input"
+                }, 
+                {
+                    "name": "wild_output", 
+                    "type": "txt"
+                }, 
+                {
+                    "name": "too_short_output", 
+                    "type": "input"
+                }, 
+                {
+                    "name": "untrimmed_output", 
+                    "type": "input"
+                }
+            ], 
+            "position": {
+                "left": 569.2257361412048, 
+                "top": 777.6805882453918
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionoutput": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "output"
+                }, 
+                "HideDatasetActionreport": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "report"
+                }, 
+                "HideDatasetActionrest_output": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "rest_output"
+                }, 
+                "HideDatasetActiontoo_short_output": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "too_short_output"
+                }, 
+                "HideDatasetActionuntrimmed_output": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "untrimmed_output"
+                }, 
+                "HideDatasetActionwild_output": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "wild_output"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/1.1.a", 
+            "tool_state": "{\"count\": \"\\\"1\\\"\", \"error_rate\": \"\\\"0.1\\\"\", \"match_read_wildcards\": \"\\\"False\\\"\", \"__page__\": 0, \"output_params\": \"{\\\"output_type\\\": \\\"default\\\", \\\"__current_case__\\\": 0}\", \"__rerun_remap_job_id__\": null, \"overlap\": \"\\\"3\\\"\", \"front_adapters\": \"[]\", \"no_match_adapters_wildcards\": \"\\\"False\\\"\", \"input\": \"null\", \"anywhere_adapters\": \"[]\", \"adapters\": \"[{\\\"__index__\\\": 0, \\\"adapter_source\\\": {\\\"adapter\\\": \\\"AGATCGGAAGAGCACACGTCT\\\", \\\"adapter_source_list\\\": \\\"user\\\", \\\"__current_case__\\\": 0}}]\", \"read_modification_params\": \"{\\\"read_modification\\\": \\\"none\\\", \\\"__current_case__\\\": 0}\", \"output_filtering_options\": \"{\\\"output_filtering\\\": \\\"default\\\", \\\"__current_case__\\\": 0}\"}", 
+            "tool_version": "1.1.a", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "5": {
+            "annotation": "", 
+            "id": 5, 
+            "input_connections": {
+                "library|input1": {
+                    "id": 3, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Preprocessing", 
+                    "name": "library"
+                }
+            ], 
+            "name": "Preprocessing", 
+            "outputs": [
+                {
+                    "name": "output1", 
+                    "type": "fastqsanger"
+                }, 
+                {
+                    "name": "output2", 
+                    "type": "fastqsanger"
+                }, 
+                {
+                    "name": "barcodes", 
+                    "type": "tabular"
+                }
+            ], 
+            "position": {
+                "left": 874.3472571372986, 
+                "top": 318.63542222976685
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionbarcodes": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "barcodes"
+                }, 
+                "HideDatasetActionoutput1": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "output1"
+                }, 
+                "HideDatasetActionoutput2": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "output2"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "testtoolshed.g2.bx.psu.edu/repos/nikos/rna_probing/rna_probing_preprocessing/1.0.0", 
+            "tool_state": "{\"trim\": \"\\\"15\\\"\", \"__page__\": 0, \"__rerun_remap_job_id__\": null, \"library\": \"{\\\"barcode_seq\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"input1\\\": null, \\\"type\\\": \\\"single\\\", \\\"__current_case__\\\": 0}\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "6": {
+            "annotation": "", 
+            "id": 6, 
+            "input_connections": {
+                "library|input1": {
+                    "id": 4, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Preprocessing", 
+                    "name": "library"
+                }
+            ], 
+            "name": "Preprocessing", 
+            "outputs": [
+                {
+                    "name": "output1", 
+                    "type": "fastqsanger"
+                }, 
+                {
+                    "name": "output2", 
+                    "type": "fastqsanger"
+                }, 
+                {
+                    "name": "barcodes", 
+                    "type": "tabular"
+                }
+            ], 
+            "position": {
+                "left": 875.4444856643677, 
+                "top": 833.8298797607422
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionbarcodes": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "barcodes"
+                }, 
+                "HideDatasetActionoutput1": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "output1"
+                }, 
+                "HideDatasetActionoutput2": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "output2"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "testtoolshed.g2.bx.psu.edu/repos/nikos/rna_probing/rna_probing_preprocessing/1.0.0", 
+            "tool_state": "{\"trim\": \"\\\"15\\\"\", \"__page__\": 0, \"__rerun_remap_job_id__\": null, \"library\": \"{\\\"barcode_seq\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"input1\\\": null, \\\"type\\\": \\\"single\\\", \\\"__current_case__\\\": 0}\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "7": {
+            "annotation": "", 
+            "id": 7, 
+            "input_connections": {
+                "library|input_1": {
+                    "id": 5, 
+                    "output_name": "output1"
+                }, 
+                "reference_genome|own_file": {
+                    "id": 2, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Bowtie2", 
+            "outputs": [
+                {
+                    "name": "output_unaligned_reads_l", 
+                    "type": "fastqsanger"
+                }, 
+                {
+                    "name": "output_unaligned_reads_r", 
+                    "type": "fastqsanger"
+                }, 
+                {
+                    "name": "output", 
+                    "type": "bam"
+                }
+            ], 
+            "position": {
+                "left": 1196.6216101646423, 
+                "top": 329.9375157356262
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionoutput": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "output"
+                }, 
+                "HideDatasetActionoutput_unaligned_reads_l": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "output_unaligned_reads_l"
+                }, 
+                "HideDatasetActionoutput_unaligned_reads_r": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "output_unaligned_reads_r"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/bowtie2/bowtie2/0.2", 
+            "tool_state": "{\"__page__\": 0, \"read_group\": \"{\\\"selection\\\": \\\"no\\\", \\\"__current_case__\\\": 1}\", \"__rerun_remap_job_id__\": null, \"unaligned_file\": \"\\\"False\\\"\", \"library\": \"{\\\"type\\\": \\\"single\\\", \\\"__current_case__\\\": 0, \\\"input_1\\\": null}\", \"reference_genome\": \"{\\\"source\\\": \\\"history\\\", \\\"__current_case__\\\": 1, \\\"own_file\\\": null}\", \"params\": \"{\\\"upto\\\": \\\"0\\\", \\\"full\\\": \\\"yes\\\", \\\"nofw_norc\\\": \\\"--norc\\\", \\\"align_type\\\": \\\"\\\", \\\"skip\\\": \\\"0\\\", \\\"__current_case__\\\": 0, \\\"time\\\": \\\"\\\", \\\"performance\\\": \\\"--sensitive\\\", \\\"gbar\\\": \\\"4\\\", \\\"trim5\\\": \\\"0\\\", \\\"trim3\\\": \\\"0\\\"}\"}", 
+            "tool_version": "0.2", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "8": {
+            "annotation": "", 
+            "id": 8, 
+            "input_connections": {
+                "library|input_1": {
+                    "id": 6, 
+                    "output_name": "output1"
+                }, 
+                "reference_genome|own_file": {
+                    "id": 2, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Bowtie2", 
+            "outputs": [
+                {
+                    "name": "output_unaligned_reads_l", 
+                    "type": "fastqsanger"
+                }, 
+                {
+                    "name": "output_unaligned_reads_r", 
+                    "type": "fastqsanger"
+                }, 
+                {
+                    "name": "output", 
+                    "type": "bam"
+                }
+            ], 
+            "position": {
+                "left": 1201.5000281333923, 
+                "top": 798.9305882453918
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionoutput": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "output"
+                }, 
+                "HideDatasetActionoutput_unaligned_reads_l": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "output_unaligned_reads_l"
+                }, 
+                "HideDatasetActionoutput_unaligned_reads_r": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "output_unaligned_reads_r"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/bowtie2/bowtie2/0.2", 
+            "tool_state": "{\"__page__\": 0, \"read_group\": \"{\\\"selection\\\": \\\"no\\\", \\\"__current_case__\\\": 1}\", \"__rerun_remap_job_id__\": null, \"unaligned_file\": \"\\\"False\\\"\", \"library\": \"{\\\"type\\\": \\\"single\\\", \\\"__current_case__\\\": 0, \\\"input_1\\\": null}\", \"reference_genome\": \"{\\\"source\\\": \\\"history\\\", \\\"__current_case__\\\": 1, \\\"own_file\\\": null}\", \"params\": \"{\\\"upto\\\": \\\"0\\\", \\\"full\\\": \\\"yes\\\", \\\"nofw_norc\\\": \\\"--norc\\\", \\\"align_type\\\": \\\"\\\", \\\"skip\\\": \\\"0\\\", \\\"__current_case__\\\": 0, \\\"time\\\": \\\"\\\", \\\"performance\\\": \\\"--sensitive\\\", \\\"gbar\\\": \\\"4\\\", \\\"trim5\\\": \\\"0\\\", \\\"trim3\\\": \\\"0\\\"}\"}", 
+            "tool_version": "0.2", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "9": {
+            "annotation": "", 
+            "id": 9, 
+            "input_connections": {
+                "input1": {
+                    "id": 7, 
+                    "output_name": "output"
+                }, 
+                "input2": {
+                    "id": 5, 
+                    "output_name": "barcodes"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Summarize Unique Barcodes", 
+            "outputs": [
+                {
+                    "name": "trimming_stats", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "unique_barcodes", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "read_counts", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "k2n_file", 
+                    "type": "txt"
+                }
+            ], 
+            "position": {
+                "left": 1612.2639441490173, 
+                "top": 342.5764012336731
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionread_counts": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "read_counts"
+                }, 
+                "HideDatasetActiontrimming_stats": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "trimming_stats"
+                }, 
+                "RenameDatasetActionk2n_file": {
+                    "action_arguments": {
+                        "newname": "k2n file (Treated)"
+                    }, 
+                    "action_type": "RenameDatasetAction", 
+                    "output_name": "k2n_file"
+                }, 
+                "RenameDatasetActionunique_barcodes": {
+                    "action_arguments": {
+                        "newname": "Unique Barcodes (Treated)"
+                    }, 
+                    "action_type": "RenameDatasetAction", 
+                    "output_name": "unique_barcodes"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "testtoolshed.g2.bx.psu.edu/repos/nikos/rna_probing/rna_probing_summarize/1.0.0", 
+            "tool_state": "{\"input2\": \"null\", \"__page__\": 0, \"input1\": \"null\", \"__rerun_remap_job_id__\": null, \"k2n\": \"\\\"True\\\"\", \"priming\": \"{\\\"flag\\\": \\\"False\\\", \\\"__current_case__\\\": 1}\", \"trimming\": \"\\\"True\\\"\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "10": {
+            "annotation": "", 
+            "id": 10, 
+            "input_connections": {
+                "input1": {
+                    "id": 8, 
+                    "output_name": "output"
+                }, 
+                "input2": {
+                    "id": 6, 
+                    "output_name": "barcodes"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Summarize Unique Barcodes", 
+            "outputs": [
+                {
+                    "name": "trimming_stats", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "unique_barcodes", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "read_counts", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "k2n_file", 
+                    "type": "txt"
+                }
+            ], 
+            "position": {
+                "left": 1611.6389441490173, 
+                "top": 805.0590672492981
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionread_counts": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "read_counts"
+                }, 
+                "HideDatasetActiontrimming_stats": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "trimming_stats"
+                }, 
+                "RenameDatasetActionk2n_file": {
+                    "action_arguments": {
+                        "newname": "k2n file (Control)"
+                    }, 
+                    "action_type": "RenameDatasetAction", 
+                    "output_name": "k2n_file"
+                }, 
+                "RenameDatasetActionunique_barcodes": {
+                    "action_arguments": {
+                        "newname": "Unique Barcodes (Control)"
+                    }, 
+                    "action_type": "RenameDatasetAction", 
+                    "output_name": "unique_barcodes"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "testtoolshed.g2.bx.psu.edu/repos/nikos/rna_probing/rna_probing_summarize/1.0.0", 
+            "tool_state": "{\"input2\": \"null\", \"__page__\": 0, \"input1\": \"null\", \"__rerun_remap_job_id__\": null, \"k2n\": \"\\\"True\\\"\", \"priming\": \"{\\\"flag\\\": \\\"False\\\", \\\"__current_case__\\\": 1}\", \"trimming\": \"\\\"True\\\"\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "11": {
+            "annotation": "", 
+            "id": 11, 
+            "input_connections": {
+                "control": {
+                    "id": 10, 
+                    "output_name": "unique_barcodes"
+                }, 
+                "euc_method|k2n_control": {
+                    "id": 10, 
+                    "output_name": "k2n_file"
+                }, 
+                "euc_method|k2n_treated": {
+                    "id": 9, 
+                    "output_name": "k2n_file"
+                }, 
+                "fasta": {
+                    "id": 2, 
+                    "output_name": "output"
+                }, 
+                "treated": {
+                    "id": 9, 
+                    "output_name": "unique_barcodes"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Normalize", 
+            "outputs": [
+                {
+                    "name": "normalized", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "bedgraph_dtcr", 
+                    "type": "bedgraph"
+                }, 
+                {
+                    "name": "bedgraph_slograt", 
+                    "type": "bedgraph"
+                }, 
+                {
+                    "name": "bedgraph_swinsor", 
+                    "type": "bedgraph"
+                }
+            ], 
+            "position": {
+                "left": 1994.1910681724548, 
+                "top": 533.5139012336731
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionbedgraph_dtcr": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "bedgraph_dtcr"
+                }, 
+                "HideDatasetActionbedgraph_slograt": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "bedgraph_slograt"
+                }, 
+                "HideDatasetActionbedgraph_swinsor": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "bedgraph_swinsor"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "testtoolshed.g2.bx.psu.edu/repos/nikos/rna_probing/rna_probing_normalize/1.0.0", 
+            "tool_state": "{\"control\": \"null\", \"cutoff\": \"\\\"101\\\"\", \"swinsor\": \"{\\\"wsize\\\": \\\"71\\\", \\\"only_top\\\": \\\"False\\\", \\\"check\\\": \\\"yes\\\", \\\"__current_case__\\\": 1, \\\"winsor_level\\\": \\\"0.9\\\"}\", \"nt_offset\": \"\\\"1\\\"\", \"__page__\": 0, \"euc_method\": \"{\\\"k2n_treated\\\": null, \\\"k2n_control\\\": null, \\\"euc\\\": \\\"HRF-Seq\\\", \\\"__current_case__\\\": 2}\", \"__rerun_remap_job_id__\": null, \"compdata\": \"\\\"True\\\"\", \"dtcr\": \"{\\\"wsize\\\": \\\"3\\\", \\\"zero\\\": \\\"True\\\", \\\"check\\\": \\\"yes\\\", \\\"__current_case__\\\": 1}\", \"fasta\": \"null\", \"slograt\": \"{\\\"wsize\\\": \\\"5\\\", \\\"depth_cor\\\": \\\"RNA\\\", \\\"pseudocount\\\": \\\"5\\\", \\\"check\\\": \\\"yes\\\", \\\"__current_case__\\\": 1}\", \"treated\": \"null\", \"bedgraph\": \"{\\\"check\\\": \\\"no\\\", \\\"__current_case__\\\": 1}\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }
+    }, 
+    "uuid": "977f740a-c1f5-47c9-85f8-753fba9f2df6"
+}
