@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <repositories description="This requires the Bowtie2 wrapper, as well as the RNA Probing suite.">
+    <repository name="cutadapt" changeset_revision="65c3f5d933a3" owner="lparsons" toolshed="http://testtoolshed.g2.bx.psu.edu"/>
     <repository name="bowtie2" changeset_revision="a03a7ee6cdff" owner="devteam" toolshed="http://testtoolshed.g2.bx.psu.edu"/>
     <repository name="rna_probing" changeset_revision="f6265e05c55c" owner="nikos" toolshed="http://testtoolshed.g2.bx.psu.edu"/>
 </repositories>

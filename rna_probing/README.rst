@@ -25,7 +25,7 @@ These dependencies should be resolved automatically via the Galaxy Tool Shed:
 
 * http://testtoolshed.g2.bx.psu.edu/view/nikos/rna_probing
 * http://testtoolshed.g2.bx.psu.edu/view/devteam/bowtie2
-
+* http://testtoolshed.g2.bx.psu.edu/view/lparsons/cutadapt
 
 History
 =======
