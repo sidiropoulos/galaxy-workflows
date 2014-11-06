@@ -17,8 +17,8 @@
             "name": "Input dataset", 
             "outputs": [], 
             "position": {
-                "left": 277.3333411216736, 
-                "top": 318.6875157356262
+                "left": 277.26391649246216, 
+                "top": 318.6180844306946
             }, 
             "tool_errors": null, 
             "tool_id": null, 
@@ -40,8 +40,8 @@
             "name": "Input dataset", 
             "outputs": [], 
             "position": {
-                "left": 268.87847661972046, 
-                "top": 785.2326512336731
+                "left": 268.8090214729309, 
+                "top": 785.1632504463196
             }, 
             "tool_errors": null, 
             "tool_id": null, 
@@ -63,8 +63,8 @@
             "name": "Input dataset", 
             "outputs": [], 
             "position": {
-                "left": 874.2257361412048, 
-                "top": 603.6007542610168
+                "left": 874.1563115119934, 
+                "top": 603.5312924385071
             }, 
             "tool_errors": null, 
             "tool_id": null, 
@@ -111,8 +111,8 @@
                 }
             ], 
             "position": {
-                "left": 573.4270911216736, 
-                "top": 264.7812657356262
+                "left": 573.3576664924622, 
+                "top": 264.7118191719055
             }, 
             "post_job_actions": {
                 "HideDatasetActionoutput": {
@@ -191,8 +191,8 @@
                 }
             ], 
             "position": {
-                "left": 569.2257361412048, 
-                "top": 777.6805882453918
+                "left": 569.1563115119934, 
+                "top": 777.6111264228821
             }, 
             "post_job_actions": {
                 "HideDatasetActionoutput": {
@@ -264,8 +264,8 @@
                 }
             ], 
             "position": {
-                "left": 874.3472571372986, 
-                "top": 318.63542222976685
+                "left": 874.2778325080872, 
+                "top": 318.5659909248352
             }, 
             "post_job_actions": {
                 "HideDatasetActionbarcodes": {
@@ -322,8 +322,8 @@
                 }
             ], 
             "position": {
-                "left": 875.4444856643677, 
-                "top": 833.8298797607422
+                "left": 875.3715825080872, 
+                "top": 833.7570004463196
             }, 
             "post_job_actions": {
                 "HideDatasetActionbarcodes": {
@@ -379,8 +379,8 @@
                 }
             ], 
             "position": {
-                "left": 1196.6216101646423, 
-                "top": 329.9375157356262
+                "left": 1196.5521473884583, 
+                "top": 329.8680844306946
             }, 
             "post_job_actions": {
                 "HideDatasetActionoutput": {
@@ -436,8 +436,8 @@
                 }
             ], 
             "position": {
-                "left": 1201.5000281333923, 
-                "top": 798.9305882453918
+                "left": 1201.43061876297, 
+                "top": 798.8611264228821
             }, 
             "post_job_actions": {
                 "HideDatasetActionoutput": {
@@ -497,8 +497,8 @@
                 }
             ], 
             "position": {
-                "left": 1612.2639441490173, 
-                "top": 342.5764012336731
+                "left": 1612.194519519806, 
+                "top": 342.50696992874146
             }, 
             "post_job_actions": {
                 "HideDatasetActionread_counts": {
@@ -567,8 +567,8 @@
                 }
             ], 
             "position": {
-                "left": 1611.6389441490173, 
-                "top": 805.0590672492981
+                "left": 1611.569519519806, 
+                "top": 804.9896054267883
             }, 
             "post_job_actions": {
                 "HideDatasetActionread_counts": {
@@ -649,8 +649,8 @@
                 }
             ], 
             "position": {
-                "left": 1994.1910681724548, 
-                "top": 533.5139012336731
+                "left": 1994.1251220703125, 
+                "top": 533.4479484558105
             }, 
             "post_job_actions": {
                 "HideDatasetActionbedgraph_dtcr": {
@@ -671,11 +671,11 @@
             }, 
             "tool_errors": null, 
             "tool_id": "testtoolshed.g2.bx.psu.edu/repos/nikos/rna_probing/rna_probing_normalize/1.0.0", 
-            "tool_state": "{\"control\": \"null\", \"cutoff\": \"\\\"101\\\"\", \"swinsor\": \"{\\\"wsize\\\": \\\"71\\\", \\\"only_top\\\": \\\"False\\\", \\\"check\\\": \\\"yes\\\", \\\"__current_case__\\\": 1, \\\"winsor_level\\\": \\\"0.9\\\"}\", \"nt_offset\": \"\\\"1\\\"\", \"__page__\": 0, \"euc_method\": \"{\\\"k2n_treated\\\": null, \\\"k2n_control\\\": null, \\\"euc\\\": \\\"HRF-Seq\\\", \\\"__current_case__\\\": 2}\", \"__rerun_remap_job_id__\": null, \"compdata\": \"\\\"True\\\"\", \"dtcr\": \"{\\\"wsize\\\": \\\"3\\\", \\\"zero\\\": \\\"True\\\", \\\"check\\\": \\\"yes\\\", \\\"__current_case__\\\": 1}\", \"fasta\": \"null\", \"slograt\": \"{\\\"wsize\\\": \\\"5\\\", \\\"depth_cor\\\": \\\"RNA\\\", \\\"pseudocount\\\": \\\"5\\\", \\\"check\\\": \\\"yes\\\", \\\"__current_case__\\\": 1}\", \"treated\": \"null\", \"bedgraph\": \"{\\\"check\\\": \\\"no\\\", \\\"__current_case__\\\": 1}\"}", 
+            "tool_state": "{\"control\": \"null\", \"cutoff\": \"\\\"1\\\"\", \"swinsor\": \"{\\\"wsize\\\": \\\"71\\\", \\\"only_top\\\": \\\"False\\\", \\\"check\\\": \\\"yes\\\", \\\"__current_case__\\\": 1, \\\"winsor_level\\\": \\\"0.9\\\"}\", \"nt_offset\": \"\\\"1\\\"\", \"__page__\": 0, \"euc_method\": \"{\\\"k2n_treated\\\": null, \\\"k2n_control\\\": null, \\\"euc\\\": \\\"HRF-Seq\\\", \\\"__current_case__\\\": 2}\", \"__rerun_remap_job_id__\": null, \"compdata\": \"\\\"True\\\"\", \"dtcr\": \"{\\\"wsize\\\": \\\"3\\\", \\\"zero\\\": \\\"True\\\", \\\"check\\\": \\\"yes\\\", \\\"__current_case__\\\": 1}\", \"fasta\": \"null\", \"slograt\": \"{\\\"wsize\\\": \\\"5\\\", \\\"depth_cor\\\": \\\"RNA\\\", \\\"pseudocount\\\": \\\"5\\\", \\\"check\\\": \\\"yes\\\", \\\"__current_case__\\\": 1}\", \"treated\": \"null\", \"bedgraph\": \"{\\\"check\\\": \\\"no\\\", \\\"__current_case__\\\": 1}\"}", 
             "tool_version": "1.0.0", 
             "type": "tool", 
             "user_outputs": []
         }
     }, 
-    "uuid": "977f740a-c1f5-47c9-85f8-753fba9f2df6"
+    "uuid": "767d4d3b-ef92-499b-9a75-773652e5a57a"
 }
